@@ -1,108 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meister Solutions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meister Solutions – Klar. Einfach. Digital.</title>
+  <meta name="description" content="Meister Solutions unterstützt Unternehmen dabei, Arbeitsprozesse klarer, einfacher und digitaler zu gestalten – verständlich, pragmatisch, zuverlässig." />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0f172a" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f9fc;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #1a73e8;
-      color: #fff;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h2 {
-      color: #1a73e8;
-      margin-bottom: 1rem;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      background: #eee;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 3rem;
-    }
-    .contact-btn {
-      display: inline-block;
-      background: #1a73e8;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .contact-btn:hover {
-      background: #0c56c3;
-    }
+    :root{--bg:#0f172a;--card:#0b1220;--txt:#e5e7eb;--muted:#9aa0aa;--acc:#22d3ee;--acc2:#38bdf8}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;color:var(--txt);background:linear-gradient(180deg,#0b1220,#0f172a)}
+    a{color:var(--acc2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1040px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#082f49;font-weight:800}
+    .brand small{display:block;color:var(--muted)}
+    nav{display:flex;gap:18px}
+    .btn{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#06243a;padding:12px 16px;border-radius:12px;font-weight:700;border:none;cursor:pointer}
+    .btn:hover{filter:brightness(1.05)}
+
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:42px 0}
+    .hero h1{font-size:clamp(30px,4.4vw,48px);line-height:1.06;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px;font-size:clamp(16px,2vw,18px)}
+    .card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    section{padding:28px 0}
+    h2{font-size:clamp(20px,2.4vw,26px);margin:0 0 12px}
+    .list{display:grid;gap:10px}
+    .list li{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:12px}
+    footer{opacity:.85;padding:22px 0;border-top:1px solid rgba(255,255,255,0.08);margin-top:30px;font-size:14px;color:var(--muted)}
+    .badges{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.4);font-size:14px}
+    .kpi{display:flex;gap:12px;align-items:flex-start}
+    .kpi svg{flex:0 0 22px}
+    .muted{color:var(--muted)}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+    blockquote{margin:0;padding:14px 16px;border-left:3px solid var(--acc);background:rgba(255,255,255,0.04);border-radius:8px}
+    @media (max-width:920px){.hero{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">M</div>
+        <div>
+          <strong>Meister Solutions</strong>
+          <small>Klar. Einfach. Digital.</small>
+        </div>
+      </div>
+      <nav aria-label="Navigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#vorgehen">Vorgehen</a>
+        <a href="#kontakt" class="btn">Kontakt</a>
+      </nav>
+    </header>
 
-  <header>
-    <h1>Meister Solutions</h1>
-    <p>Effiziente Lösungen für moderne Arbeitsprozesse</p>
-  </header>
+    <section class="hero">
+      <div>
+        <div class="pill">Einfach. Klar. Wirkungsstark.</div>
+        <h1>Prozesse vereinfachen. Ergebnisse beschleunigen.</h1>
+        <p>Wir helfen, Arbeitsabläufe zu verschlanken – mit fokussierten, verständlichen digitalen Lösungen. Kein Ballast, nur das, was wirkt.</p>
+        <div class="cta">
+          <a class="btn" href="#kontakt">Unverbindlich anfragen</a>
+          <span class="badge">Schnell startklar</span>
+          <span class="badge">DSGVO‑bewusst</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">Wobei wir oft unterstützen</h2>
+        <div class="grid-3">
+          <div class="kpi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path d="M3 12h18M12 3v18" stroke-width="2"/></svg>
+            <div><strong>Routine vereinfachen</strong><br><span class="muted">Wiederkehrende Aufgaben schlank lösen</span></div>
+          </div>
+          <div class="kpi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><path d="M3 7h18M3 12h12M3 17h8" stroke-width="2"/></svg>
+            <div><strong>Daten ordnen</strong><br><span class="muted">Struktur statt Doppelarbeit</span></div>
+          </div>
+          <div class="kpi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22"><circle cx="12" cy="12" r="9" stroke-width="2"/><path d="M12 7v5l3 3" stroke-width="2"/></svg>
+            <div><strong>Zeit sparen</strong><br><span class="muted">Schneller zu Ergebnissen</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <div class="card">
-      <h2>Über uns</h2>
-      <p>
-        Wir unterstützen Unternehmen dabei, ihre Abläufe einfacher, schneller und transparenter zu gestalten. 
-        Unser Fokus liegt auf modernen, digitalen Lösungen, die sich nahtlos in bestehende Prozesse integrieren lassen.
-      </p>
-    </div>
+    <section id="leistungen">
+      <h2>Leistungen</h2>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Digitale Vereinfachung</strong>
+          <p class="muted">Schlanke Lösungen, die bestehende Abläufe besser machen – ohne große Umbrüche.</p>
+        </div>
+        <div class="card">
+          <strong>Prozess‑Begleitung</strong>
+          <p class="muted">Vom ersten Gespräch bis zum Ergebnis: pragmatisch, nachvollziehbar, transparent.</p>
+        </div>
+      </div>
+      <ul class="list">
+        <li>Fokussierte Tools statt Feature‑Überladung</li>
+        <li>Klarer Nutzen, schnell sichtbar</li>
+        <li>Integration in vorhandene Arbeitsweisen</li>
+      </ul>
+    </section>
 
-    <div class="card">
-      <h2>Unsere Leistungen</h2>
-      <p>
-        Ob Automatisierung, Prozessoptimierung oder maßgeschneiderte Software: Wir entwickeln 
-        pragmatische Ansätze, die direkt Mehrwert schaffen. 
-        Dabei legen wir besonderen Wert auf einfache Bedienbarkeit und eine klare Struktur.
-      </p>
-    </div>
+    <section id="vorgehen">
+      <h2>Unser Vorgehen</h2>
+      <div class="grid-3">
+        <div class="card">
+          <strong>1 · Verstehen</strong>
+          <p class="muted">Gemeinsam klären wir, was wirklich zählt – und was weg kann.</p>
+        </div>
+        <div class="card">
+          <strong>2 · Vereinfachen</strong>
+          <p class="muted">Wir bauen das Minimum, das maximal wirkt – übersichtlich und stabil.</p>
+        </div>
+        <div class="card">
+          <strong>3 · Verstetigen</strong>
+          <p class="muted">Ergebnis sichern, Übergabe & kurze Anleitung – damit es einfach läuft.</p>
+        </div>
+      </div>
+      <blockquote>„Weniger klicken, schneller fertig – genau so sollte digitale Arbeit sich anfühlen.“</blockquote>
+    </section>
 
-    <div class="card">
-      <h2>Kontakt</h2>
-      <p>
-        Haben Sie Interesse an einer Zusammenarbeit oder möchten mehr erfahren?  
-        Wir freuen uns auf Ihre Nachricht.
-      </p>
-      <a href="mailto:info@meistersolutions.de" class="contact-btn">Jetzt Kontakt aufnehmen</a>
-    </div>
-  </section>
+    <section id="kontakt" class="card">
+      <h2 style="margin-top:0">Kontakt</h2>
+      <p class="muted">Kurze Nachricht genügt – wir melden uns mit einem Vorschlag für den nächsten Schritt.</p>
+      <p>✉️ <a href="mailto:christoph.meister@meistersolutions.de">christoph.meister@meistersolutions.de</a><br>☎️ <a href="tel:+491622537334">+49 162 2537334</a></p>
+      <form name="kontakt" method="POST" data-netlify="true" style="display:grid;gap:10px;max-width:420px">
+        <input name="name" placeholder="Ihr Name" required />
+        <input type="email" name="email" placeholder="Ihre E‑Mail" required />
+        <textarea name="message" rows="4" placeholder="Ihre Nachricht" required></textarea>
+        <button class="btn" type="submit">Nachricht senden</button>
+      </form>
+    </section>
 
-  <footer>
-    © 2025 Meister Solutions – Alle Rechte vorbehalten
-  </footer>
-
+    <footer>
+      <div>© <span id="y"></span> Meister Solutions · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
